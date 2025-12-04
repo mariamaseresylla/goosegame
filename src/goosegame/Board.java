@@ -1,5 +1,5 @@
 package goosegame;
 
-public class Board {
+public abstract class Board {
     
 }
