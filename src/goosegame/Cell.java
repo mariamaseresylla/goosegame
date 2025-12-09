@@ -1,13 +1,20 @@
 package goosegame;
 
 public abstract class Cell {
-    protected int n;
+    protected int numCell;
     protected Player pion;
-    public Cell(int n){
-        this.n= n;
+    public Cell(int numCell){
+        this.numCell= numCell;
         this.pion=null;
     }
+    /***
+     * return the number of  one cell
+     */
+    public  int getN(){
+        return this.numCell;
+    }
+    
+     
 
-    
-    
+
 } 
