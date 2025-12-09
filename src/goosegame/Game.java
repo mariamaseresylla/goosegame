@@ -12,7 +12,7 @@ public class Game {
     } 
 
     public boolean lastCell(Player p){
-       return  this.board.getCell(63)==p.getCell().getN();
+       return  this.board.getCell(63)== p.getCell();
 
         
 
