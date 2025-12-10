@@ -13,18 +13,22 @@ public abstract class Cell {
      public int getNumCell() {
         return numCell;
     }
-    public int  Bound(int dee){
-        return 0;
-
-    }
     public Player getPlayer() {
         return player;
     }
     public void setPlayer(Player player) {
         this.player = player;
     }
+    public int  bound(int dee){
+        return 0;
+
+    }
+  
     public boolean canLeave(){
         return true;
+    }
+    public String toSting(){
+        return "je suis la cellule numero :"+this.numCell+"i containt :"+this.player;
     }
    
 

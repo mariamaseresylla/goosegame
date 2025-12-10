@@ -1,28 +1,30 @@
 package goosegame.cell;
 
 import goosegame.Cell;
+import goosegame.Player;
 
 public class CellWating   extends Cell{
     private int waitingTime;
+    private final int WAITING_TIME;
+
     public CellWating(int numCell,int waitingTime){
         super(numCell);
-        this.waitingTime=waitingTime;
+        this.WAITING_TIME = waitingTime;
+        this.waitingTime = waitingTime;
 
     }
     public int getWaitingTime() {
         return waitingTime;
     }
-    public void setWaitingTime(int waitingTime) {
-        this.waitingTime = waitingTime;
+    
+    public void setPlayer(Player player) {
+        super.setPlayer(player);
+        this.waitingTime = this.WAITING_TIME;
     }
-    public boolean canLeave(){
-        if(this.waitingTime==0){
-            return true;
-        }
-        else{
-            this.waitingTime=this.waitingTime-1;
-            return false;
-        }
+    
+    public boolean canLeave(){            
+        this.waitingTime=this.waitingTime-1;
+        return waitingTime == 0;
 
     }
 

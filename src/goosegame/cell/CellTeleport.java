@@ -1,14 +1,14 @@
 package goosegame.cell;
 import goosegame.*;
 public class CellTeleport extends Cell {
-    private Cell nextCell;
-    public CellTeleport(int numCell,Cell nextCell){
+    private int nextNum;
+    public CellTeleport(int numCell,int nextNum){
         super(numCell);
-        this.nextCell=nextCell;
+        this.nextNum=nextNum;
     }
     
     public int bound(int dee){
-        return  this.nextCell.getNumCell() - this.numCell ;
+        return  this.nextNum - this.numCell ;
 
     }
 }
