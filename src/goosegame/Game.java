@@ -22,7 +22,8 @@ public class Game {
         this.thePlayers.add(p);
     }
      public void play(){
-        while()
+        int i= 1;
+        
          
      }
 }

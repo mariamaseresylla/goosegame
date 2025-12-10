@@ -14,6 +14,11 @@ public abstract class Cell {
         return this.numCell;
     }
     
+    public int  Bound(int dee){
+        return 0;
+
+    }
+    
      
 
 
