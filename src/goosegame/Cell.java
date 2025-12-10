@@ -23,6 +23,9 @@ public abstract class Cell {
     public void setPlayer(Player player) {
         this.player = player;
     }
+    public boolean canLeave(){
+        return true;
+    }
    
 
     
