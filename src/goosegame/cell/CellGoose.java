@@ -5,8 +5,8 @@ public class CellGoose extends Cell {
         super(numCell);
     }
     
-    public int bound(int dees){
-        
+    public int bound(int dee){
+        return 2*dee;
     }
     
 }
