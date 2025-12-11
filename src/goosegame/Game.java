@@ -33,6 +33,7 @@ public class Game {
          
     }
      public void play(){
+        //verifier si c est possible de quitter canleave avnat
         for(Player player :this.thePlayers){
             int n=player.twoDiceThrow();
             Cell destiCell=this.board.getCell(this.nextPosition(n, player));
