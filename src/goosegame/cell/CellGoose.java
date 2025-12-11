@@ -6,7 +6,7 @@ public class CellGoose extends Cell {
     }
     
     public int bound(int dee){
-        return 2*dee;
+        return dee; //a modifier c est pas 2*dee c seulement dee relis le sujet
     }
     
 }

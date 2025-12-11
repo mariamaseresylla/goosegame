@@ -16,7 +16,10 @@ public abstract class Board {
 
     }
 
-
+    //ajouter un getnbofCeells
+    public int getNbOfCells(){
+        return this.nbOfCells;
+    }
     protected void initBoard(){
         for (int i=0; i<this.theCells.length;i++){
             if ( this.theCells[i]== ){
