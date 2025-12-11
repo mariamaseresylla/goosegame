@@ -19,9 +19,7 @@ public abstract class Board {
 
     protected void initBoard(){
         for (int i=0; i<this.theCells.length;i++){
-            if ( this.theCells[i]== ){
-
-            }
+           
            
 
         }
