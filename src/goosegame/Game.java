@@ -33,19 +33,28 @@ public class Game {
          
     }
      public void play(){
+
+        while(this.board.getCell(this.board.getNbOfCells()-1).getPlayer()!=null){
         //verifier si c est possible de quitter canleave avnat
         for(Player player :this.thePlayers){
             int n=player.twoDiceThrow();
             Cell destiCell=this.board.getCell(this.nextPosition(n, player));
-            player.changeCell(destiCell);
-            if(destiCell.bound(n)!=0){
-                int nextNum=this.nextPosition(destiCell.bound(n), player);
-                player.changeCell(this.board.getCell(nextNum));
-                //a finir demain
-
+            if (player.getCell().canLeave()){   //si on peut bouger
+                if (destiCell.getPlayer()!=null){      //si y a un joueur a la destination 
+                    destiCell.getPlayer().changeCell(player.getCell()); //le jeur a la destination est renvoye a la cell u player
+                    player.changeCell(destiCell);  //le player recupere sa cell de destination
+                }
+                else{
+                    player.changeCell(destiCell);
+                }
+                if(destiCell.bound(n)!=0){  //gestion des consequences sur ces ca
+                    int nextNum=this.nextPosition(destiCell.bound(n), player);
+                    player.changeCell(this.board.getCell(nextNum));
+                        
+        
+                }
                 
-
-
+         }
 
             }
             
