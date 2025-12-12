@@ -1,7 +1,5 @@
 package goosegame;
-
 import goosegame.cell.*;
-import goosegame.cell.CellWating;
 // class classicalboard
    public class ClassicalBoard extends Board {
     // build classicalboard
@@ -34,11 +32,21 @@ import goosegame.cell.CellWating;
     private boolean isWaitingCell(int i) {
         return i == 19;
     }
-
+    /**
+     * 
+     * @param i
+     * @return
+     */
     private boolean isTeleportCell(int i) {
         return i == 6 || i == 42 || i == 58;
 
     }
+
+    /**
+     * return the next destination of i
+     * @param i
+     * @return
+     */
     private int nextDestination(int i){
         if (i==6){
             return 12;
@@ -54,7 +62,9 @@ import goosegame.cell.CellWating;
         }
 
     }
-
+    /**
+     * init each cell of the board by one type cell
+     */
     protected void initBoard() {
         for (int i = 0; i < this.theCells.length; i++) {
             if (this.isGooseCell(i)) {
