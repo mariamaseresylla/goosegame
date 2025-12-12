@@ -1,13 +1,19 @@
-package goosegame;
+    package goosegame;
 
-import goosegame.cell.CellGoose;
-import goosegame.cell.CellTeleport;
-import goosegame.cell.CellTrap;
+    import goosegame.cell.CellGoose;
+    import goosegame.cell.CellTeleport;
+    import goosegame.cell.CellTrap;
 
-public class ClassicalBoard extends Board {
-    public ClassicalBoard(int nbOfCells){
-        super(nbOfCells);
+    public class ClassicalBoard extends Board {
+        public ClassicalBoard(int nbOfCells){
+            super(nbOfCells);
+        }
+
+    private boolean isGooseCell(){
+        
     }
+    private boolezn 
+
 
     protected void initBoard(){
         for ( int i=0; i< this.theCells.length;i++){
@@ -45,7 +51,7 @@ public class ClassicalBoard extends Board {
                 this.theCells[i]= new CellTeleport(i,i+1);
             }
             else {
-                
+
             }
 
         }
