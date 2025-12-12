@@ -1,60 +1,75 @@
-    package goosegame;
+package goosegame;
 
-    import goosegame.cell.CellGoose;
-    import goosegame.cell.CellTeleport;
-    import goosegame.cell.CellTrap;
+import goosegame.cell.*;
+import goosegame.cell.CellWating;
+// class classicalboard
+   public class ClassicalBoard extends Board {
+    // build classicalboard
+    public ClassicalBoard(int nbOfCells) {
+        super(nbOfCells);
+    }
+    /**
+     * return true if this cell is goose
+     * @param i
+     * @return
+     */
+    private boolean isGooseCell(int i) {
+        return i == 9 || i == 18 || i == 27 || i == 36 || i == 45 || i == 54;
 
-    public class ClassicalBoard extends Board {
-        public ClassicalBoard(int nbOfCells){
-            super(nbOfCells);
+    }
+    /**
+     * return true if the cell is trap
+     * @param i
+     * @return
+     */
+    private boolean isTrapCell(int i) {
+        return i == 31 || i == 52;
+    }
+
+    /**
+     * return true if the  
+     * @param i
+     * @return
+     */
+    private boolean isWaitingCell(int i) {
+        return i == 19;
+    }
+
+    private boolean isTeleportCell(int i) {
+        return i == 6 || i == 42 || i == 58;
+
+    }
+    private int nextDestination(int i){
+        if (i==6){
+            return 12;
+        }
+        else if (i==42){
+            return 30;
+        }
+        else if (i== 58){
+            return 1;
+        }
+        else{
+            return i;
         }
 
-    private boolean isGooseCell(){
-        
     }
-    private boolezn 
 
-
-    protected void initBoard(){
-        for ( int i=0; i< this.theCells.length;i++){
-            if (i==9){
-                this.theCells[i]= new CellGoose(i);
+    protected void initBoard() {
+        for (int i = 0; i < this.theCells.length; i++) {
+            if (this.isGooseCell(i)) {
+                this.theCells[i] = new CellGoose(i);
+            } else if (this.isTrapCell(i)) {
+                this.theCells[i] = new CellTrap(i);
+            } else if (this.isTeleportCell(i)) {
+                this.theCells[i] = new CellTeleport(i,nextDestination(i));
+            } else if (this.isWaitingCell(i)) {
+                this.theCells[i] = new CellWating(i,2);
+            } else {
+                this.theCells[i] = new NormalCell(i);
             }
-            if (i==18){
-                this.theCells[i]= new CellGoose(i);
-            }
-            if (i==27){
-                this.theCells[i]= new CellGoose(i);
-            }
-            if (i==36){
-                this.theCells[i]= new CellGoose(i);
-            }if (i==45){
-                this.theCells[i]= new CellGoose(i);
-            }
-            if (i==54){
-                this.theCells[i]= new CellGoose(i);
-            }
-            if (i==31){
-                this.theCells[i]= new CellTrap(i);
-            }
-             if (i==52){
-                this.theCells[i]= new CellTrap(i);
-            }
-             if (i==6){
-                this.theCells[i]= new CellTeleport(i,i+1);
-            }
-
-             if (i==42){
-                this.theCells[i]= new CellTeleport(i,i+1);
-            }
-             if (i==58){
-                this.theCells[i]= new CellTeleport(i,i+1);
-            }
-            else {
-
-            }
-
         }
+
     }
-     
+
 }
