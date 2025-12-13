@@ -3,8 +3,8 @@ import goosegame.cell.*;
 // class classicalboard
    public class ClassicalBoard extends Board {
     // build classicalboard
-    public ClassicalBoard(int nbOfCells) {
-        super(nbOfCells);
+    public ClassicalBoard() {
+        super(63);
     }
     /**
      * return true if this cell is goose

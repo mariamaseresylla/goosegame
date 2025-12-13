@@ -37,8 +37,10 @@ public class Game {
         while(this.board.getCell(this.board.getNbOfCells()-1).getPlayer()!=null){
         //verifier si c est possible de quitter canleave avnat
         for(Player player :this.thePlayers){
+            System.out.println("j ai"+ player.toString());
             int n=player.twoDiceThrow();
             Cell destiCell=this.board.getCell(this.nextPosition(n, player));
+
             if (player.getCell().canLeave()){   //si on peut bouger
                 if (destiCell.getPlayer()!=null){      //si y a un joueur a la destination 
                     destiCell.getPlayer().changeCell(player.getCell()); //le jeur a la destination est renvoye a la cell u player
@@ -59,7 +61,11 @@ public class Game {
             }
             
         }    
+        System.out.println("victoire de");
         
          
      }
+
+
+     
 }
