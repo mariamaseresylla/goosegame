@@ -1,6 +1,6 @@
 package goosegame;
 
-public class Test{
+public class GameMain{
     public static void main(String[] args) {
         Board b=new ClassicalBoard();
         Game g=new Game(b);
