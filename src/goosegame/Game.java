@@ -28,9 +28,9 @@ public class Game {
     public int nextPosition(int n,Player player){
          int positionActuuel=player.getCell().getNumCell();
          int nextPosition=n+positionActuuel;
-         int sizeBoard=this.board.getNbOfCells();
-        if(nextPosition>sizeBoard){
-            return sizeBoard-(nextPosition-sizeBoard);
+         int lastIndex = this.board.getNbOfCells() - 1;
+        if(nextPosition>lastIndex){
+             nextPosition = lastIndex - (nextPosition - lastIndex);
         }
         return nextPosition;
          
