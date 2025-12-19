@@ -4,7 +4,7 @@ import goosegame.cell.*;
    public class ClassicalBoard extends Board {
     // build classicalboard
     public ClassicalBoard() {
-        super(64);
+        super(63);
     }
     /**
      * return true if this cell is goose

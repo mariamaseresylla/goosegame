@@ -12,7 +12,7 @@ public class Game {
     } 
 
     public boolean lastCell(Player p){
-       return  this.board.getCell(63)== p.getCell();
+       return  this.board.getCell(this.board.getNbOfCells()-1)== p.getCell();
 
         
 
@@ -35,9 +35,57 @@ public class Game {
         return nextPosition;
          
     }
-     public void play(){
+    public void play() {
+    boolean finished = false;
 
-        while(this.board.getCell(this.board.getNbOfCells()-1).getPlayer()!=null){
+    while (!finished) {
+        for (Player player : this.thePlayers) {
+
+            Cell currentCell = player.getCell();
+            boolean canPlay = currentCell.canLeave();
+
+            // Si le joueur ne peut pas jouer, on passe à la suite naturellement
+            if (canPlay) {
+                int dice = player.twoDiceThrow();
+                int nextIndex = nextPosition(dice, player);
+                Cell destCell = board.getCell(nextIndex);
+
+                int rebound = destCell.bound(dice);
+                Cell finalCell = destCell;
+                if (rebound != 0) {
+                    int reboundIndex = nextPosition(rebound, player);
+                    finalCell = board.getCell(reboundIndex);
+                }
+
+                // Gestion des collisions
+                if (finalCell.getPlayer() != null) {
+                    Player other = finalCell.getPlayer();
+                    currentCell.setPlayer(other);
+                    other.changeCell(currentCell);
+                }
+
+                // Déplacement du joueur
+                currentCell.setPlayer(null);
+                player.changeCell(finalCell);
+                finalCell.setPlayer(player);
+
+                System.out.println(player + " is in cell " + finalCell.getNumCell() + ", throws " + dice +
+                                   (finalCell != destCell ? " and jumps to cell " + finalCell.getNumCell() : ""));
+            } else {
+                System.out.println(player + " is in cell " + currentCell.getNumCell() + ", cannot play.");
+            }
+
+            //Vérification de la victoire
+            if (lastCell(player)) {
+                System.out.println(player + " has won!");
+                finished = true;
+            }
+        }
+    }
+}
+    /**public void play(){
+        boolean finished= false ;
+        while(!finished){
         //verifier si c est possible de quitter canleave avnat
         for(Player player :this.thePlayers){
             System.out.println("j ai"+ player.toString());
@@ -67,7 +115,7 @@ public class Game {
         System.out.println("victoire de");
         
          
-     }
+     }*/
 
 
      
