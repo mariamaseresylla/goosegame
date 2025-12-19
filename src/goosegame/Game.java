@@ -19,6 +19,9 @@ public class Game {
     }
 
     public void addPlay(Player p){
+        Cell startCell = this.board.getCell(0);
+        p.changeCell(startCell);
+        startCell.setPlayer(p);
         this.thePlayers.add(p);
     }
 
