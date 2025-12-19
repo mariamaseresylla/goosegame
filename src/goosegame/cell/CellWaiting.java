@@ -3,11 +3,11 @@ package goosegame.cell;
 import goosegame.Cell;
 import goosegame.Player;
 //class  cellwaiting 
-public class CellWating   extends Cell{
+public class CellWaiting   extends Cell{
     private int waitingTime;
     private final int WAITING_TIME;
     // class cellwating
-    public CellWating(int numCell,int waitingTime){
+    public CellWaiting(int numCell,int waitingTime){
         super(numCell);
         this.WAITING_TIME = waitingTime;
         this.waitingTime = waitingTime;

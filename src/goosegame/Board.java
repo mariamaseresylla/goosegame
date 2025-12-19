@@ -24,7 +24,7 @@ public abstract class Board {
     public int getNbOfCells(){
         return this.nbOfCells;
     }
-    protected void initBoard(){
+    protected abstract void initBoard();
         
-    }
+    
 }

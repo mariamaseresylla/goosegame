@@ -74,7 +74,7 @@ import goosegame.cell.*;
             } else if (this.isTeleportCell(i)) {
                 this.theCells[i] = new CellTeleport(i,nextDestination(i));
             } else if (this.isWaitingCell(i)) {
-                this.theCells[i] = new CellWating(i,2);
+                this.theCells[i] = new CellWaiting(i,2);
             } else {
                 this.theCells[i] = new NormalCell(i);
             }

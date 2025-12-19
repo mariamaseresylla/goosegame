@@ -54,7 +54,7 @@ public abstract class Cell {
      * represantation of the cell
      * @return the representation of the cell
      */
-    public String toSting(){
+    public String toString(){
         return "je suis la cellule numero :"+this.numCell+"i containt :"+this.player;
     }
    
