@@ -9,7 +9,7 @@ Obectif du TP (en termes de compétences)
 
 Objectits atteints
 
-j'ai acquise la manipulation des herttages ,des sous classes qui herite une classe mere   , , les l'ecriture du main ,les classes abstraites, la manipulation des heritags , l'utilisation du super constructeur ,  la modification d'une methode de la classe fille, la division d'un probleme en sous probleme ,la manipulation des methodes abstraites
+j'ai acquise la manipulation des heritages ,des sous classes qui heritent une classe mère   ,  l'ecriture du main ,les classes abstraites, la manipulation des heritages , l'utilisation du super constructeur ,  la modification d'une methode de la classe fille, la division d'un probleme en sous probleme ,la manipulation des methodes abstraites
 Objectif non atteints et difficultés rencontrées (le cas échéant)
 
 il ya des notions que je dois revoir sur les heritages.
